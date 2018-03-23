@@ -1,5 +1,7 @@
 package hdt8;
 
+import java.util.Vector;
+
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 {
 
@@ -110,3 +112,24 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 		if (data.size() > 1) pushDownRoot(0);
 		return minVal;
 	}
+
+    @Override
+    public E getFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isEmpty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int size() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }   
+}
