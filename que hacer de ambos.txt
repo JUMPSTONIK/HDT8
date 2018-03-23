@@ -1,13 +1,9 @@
 clases
-nodo - luis
-paciente - jump
 VectorHeap - jump
 PriorityQueue - luis
-main jump/luis
+main jump
 
 Extras
 UML - jump
 Diagrama de Secuencia - luis
 Pruebas unitarias - luis
-Crear repositorio - jump
-crear el proyeto - jump
