@@ -19,8 +19,6 @@ public class Node<E> {
         value=null;
         left=null;
         right=null;
-        
-                
     }
 
     public Node (Paciente value) {
