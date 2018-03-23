@@ -37,7 +37,8 @@ public class Paciente {
     public String getPrioridad() {
         return prioridad;
     }
-
     
-    
+    public int compareTo(Paciente o) {
+        return prioridad.compareTo(o.getPrioridad());
+    }
 }
