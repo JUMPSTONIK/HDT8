@@ -1,1 +1,5 @@
-luis_Delgado>yugular_cortada>E andrea_Arguello>pierna_rota>D mafer_Lopez>ojo_caido>A diego_Sevilla>dedo_cortado>C javier_Carpio>atropellado>B
+luis_Delgado>yugular_cortada>E 
+andrea_Arguello>pierna_rota>D 
+mafer_Lopez>ojo_caido>A 
+diego_Sevilla>dedo_cortado>C 
+javier_Carpio>atropellado>B
