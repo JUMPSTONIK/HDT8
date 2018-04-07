@@ -1,4 +1,4 @@
-package hdt8;
+
 
 import java.util.Vector;
 
@@ -23,27 +23,43 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 			add(v.get(i));
 		}
 	}
+        /**
+         * devuelve la posicion del nodo padre
+         * @param i numero de posicion del nodo
+         * @return posicion del nodo actual
+         */
 	protected static int parent(int i)
 	// pre: 0 <= i < size
 	// post: returns parent of node at location i
 	{
 		return (i-1)/2;
 	}
-
+        /**
+         * devuelve la posicion del nodo izquierdo del padre
+         * @param i numero de posicion del nodo izquierdo
+         * @return posicion del nodo izquierdo actual
+         */
 	protected static int left(int i)
 	// pre: 0 <= i < size
 	// post: returns index of left child of node at location i
 	{
 		return 2*i+1;
 	}
-
+        /**
+         * devuelve la posicion del nodo derecho del padre
+         * @param i numero de posicion del nodo derecho
+         * @return posicion del nodo derecho actual
+         */
 	protected static int right(int i)
 	// pre: 0 <= i < size
 	// post: returns index of right child of node at location i
 	{
 		return (2*i+1) + 1;
 	}
-
+        /**
+         * mueve el nodo obtenido a una posicion apropiada
+         * @param leaf numero de posicion del nodo
+         */
 	protected void percolateUp(int leaf)
 	// pre: 0 <= leaf < size
 	// post: moves node at index leaf up to appropriate position
@@ -59,7 +75,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 		}
 		data.set(leaf,value);
 	}
-
+        /**
+         * agre un valor a uno de los nodos
+         * @param value valor el cual va a ser introducido a uno de los nodos
+         */
 	public void add(E value)
 	// pre: value is non-null comparable
 	// post: value is added to priority queue
@@ -90,7 +109,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
                 }
             }
 	}
-
+        /**
+         * esta funcion pone a una posicion apropiada al nodo elegido
+         * @param root numero del nodo a mover
+         */
 	protected void pushDownRoot(int root)
 	// pre: 0 <= root < size
 	// post: moves node at index root down
@@ -124,7 +146,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 			}
 		}
 	}
-
+        /**
+         * remueve un valor del nodo elegido
+         * @return el valor minimo del queue
+         */
 	public E remove()
 	// pre: !isEmpty()
 	// post: returns and removes minimum value from queue

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hdt8;
 
 /**
  *
@@ -20,7 +19,10 @@ public class Node<E> {
         left=null;
         right=null;
     }
-
+    /**
+     * esta es la funcion encargada de devolver el nodo del paciente
+     * @param value paciente enviado
+     */
     public Node (Paciente value) {
         this.value = value;
         left = null;

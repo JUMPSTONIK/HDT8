@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hdt8;
 
 /**
  *
@@ -21,6 +20,9 @@ public class Paciente implements Comparable<Paciente> {
     }
 
     @Override
+    /**
+     * devuelve un string con todos los datos del paciente
+     */
     public String toString() {
         return nombre+" "+padecimiento+" "+ prioridad+" ";
     }
@@ -30,15 +32,23 @@ public class Paciente implements Comparable<Paciente> {
         padecimiento=null;
         prioridad=null;
     }
-
+    /**
+     * @return devuleve nombre del paciente 
+     */
     public String getNombre() {
         return nombre;
     }
-
+    /**
+     * 
+     * @return dvuleve el padecimeinto del paciente 
+     */
     public String getPadecimiento() {
         return padecimiento;
     }
-
+    /**
+     * 
+     * @return devuelve la prioridad del padecimiento del paciente 
+     */
     public String getPrioridad() {
         return prioridad;
     }
