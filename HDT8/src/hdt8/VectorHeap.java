@@ -64,8 +64,31 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 	// pre: value is non-null comparable
 	// post: value is added to priority queue
 	{
+            if (data.isEmpty())
 		data.add(value);
-		percolateUp(data.size()-1);
+            else{
+                boolean padreMenor=true;
+    		data.add(value);
+                while(padreMenor){
+                int posicionValue=data.indexOf(value);
+                int posicionPadre;
+                if ((posicionValue%2)==0){
+                        posicionPadre=(posicionValue/2)-1;
+                    }else{
+                        posicionPadre=((posicionValue-1)/2);
+                    }
+                    if(posicionPadre>=0){
+                        if (value.compareTo(data.get(posicionPadre))<0){
+                            intercambiar(posicionValue,posicionPadre);
+                            posicionValue=posicionPadre;
+                        }else{
+                            padreMenor=false;
+                        }
+                    }else{
+                        padreMenor=false;
+                    }
+                }
+            }
 	}
 
 	protected void pushDownRoot(int root)
@@ -115,21 +138,36 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 
     @Override
     public E getFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return data.get(0);
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return data.isEmpty();
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return data.size();
     }
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        data.clear();
     }   
+    
+    public void intercambiar(int posicionOriginal,int posicionFinal){
+        E provisional=data.get(posicionFinal);
+        data.removeElementAt(posicionFinal);
+        data.insertElementAt(data.get(posicionOriginal-1), posicionFinal);
+        data.removeElementAt(posicionOriginal);
+        data.insertElementAt(provisional, posicionOriginal);
+    }
+    public String toString(){
+        String cadena="";
+        for(int i=0;i<data.size();i++){
+            cadena=cadena+data.get(i).toString()+"\n";
+        }
+        return cadena;
+    }
 }

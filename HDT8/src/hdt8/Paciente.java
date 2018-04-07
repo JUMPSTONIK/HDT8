@@ -9,7 +9,7 @@ package hdt8;
  *
  * @author ledod
  */
-public class Paciente {
+public class Paciente implements Comparable<Paciente> {
     private String nombre;
     private String padecimiento;
     private String prioridad;
@@ -18,6 +18,11 @@ public class Paciente {
         this.nombre = nombre;
         this.padecimiento = padecimiento;
         this.prioridad = prioridad;
+    }
+
+    @Override
+    public String toString() {
+        return nombre+" "+padecimiento+" "+ prioridad+" ";
     }
     
     public Paciente(){
@@ -37,8 +42,10 @@ public class Paciente {
     public String getPrioridad() {
         return prioridad;
     }
-    
+
+    @Override
     public int compareTo(Paciente o) {
         return prioridad.compareTo(o.getPrioridad());
     }
+    
 }
